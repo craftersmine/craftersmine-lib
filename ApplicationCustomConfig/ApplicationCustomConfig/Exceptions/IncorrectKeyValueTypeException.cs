@@ -33,3 +33,4 @@ namespace craftersmine.Configuration.Exceptions
         public IncorrectKeyValueTypeException(string message, Exception inner) : base(message, inner) { }
     }
 }
+
