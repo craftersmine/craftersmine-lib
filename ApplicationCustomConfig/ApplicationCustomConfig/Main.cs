@@ -1,5 +1,7 @@
 ﻿//Copyright craftersmine (c) 2015
 
+//Documentation translated Google Translate
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,23 +11,23 @@ using craftersmine.Configuration.Exceptions;
 namespace craftersmine.Configuration
 {
     /// <summary>
-    /// Реализует класс управлением конфигурацией. Данный класс не может быть унаследован
+    /// Implements class configuration management. This class can not be inherited
     /// </summary>
     public sealed class Configuration
     {
-        #region Поля
+        #region Fields
         private string[] _configFileContents;
         private Dictionary<string, string> _configContentsDict = new Dictionary<string, string>();
         private string _file;
         private bool _valKey = false;
         #endregion
 
-        #region Конструкторы
+        #region Constructors
         /// <summary>
-        /// Инициализирует новый экземпляр <see cref="craftersmine.Configuration.Configuration(string, bool)"/> и загружает файл
+        /// Initializes a new instance of the <see cref="craftersmine.Configuration.Configuration(string, bool)"/> and loads the specified file
         /// </summary>
-        /// <param name="file">Файл конфигурации</param>
-        /// <param name="validateConfig">Проверить на существование ключа "config"</param>
+        /// <param name="file">Configuration File</param>
+        /// <param name="validateConfig">Check the existence of the key "config"</param>
         public Configuration(string file, bool validateConfig)
         {
             _file = file;
@@ -71,9 +73,9 @@ namespace craftersmine.Configuration
             }
         }
         /// <summary>
-        /// Инициализирует новый экземпляр <see cref="craftersmine.Configuration.Configuration(string, bool)"/> с проверкой на ключ "config" и загружает файл
+        /// Initializes a new instance of the <see cref="craftersmine.Configuration.Configuration(string, bool)"/> with a check for the key "config", and loads the specified file
         /// </summary>
-        /// <param name="file">Файл конфигурации</param>
+        /// <param name="file">Configuration File</param>
         public Configuration(string file)
         {
             _file = file;
@@ -81,12 +83,12 @@ namespace craftersmine.Configuration
         }
         #endregion
 
-        #region Методы
+        #region Methods
         /// <summary>
-        /// Получает строковое значение указанного ключа
+        /// Get string value of the specified key
         /// </summary>
-        /// <param name="key">Ключ</param>
-        /// <returns>Строка указанного ключа</returns>
+        /// <param name="key">Key</param>
+        /// <returns>The string specified key</returns>
         public string GetString(string key)
         {
             if (_configContentsDict.ContainsKey(key))
@@ -99,10 +101,10 @@ namespace craftersmine.Configuration
             else throw new ConfigurationKeyNotFoundException("Ключ \"" + key + "\" не найден");
         }
         /// <summary>
-        /// Получает числовое значение указанного ключа
+        /// Gets the numerical value of the specified key
         /// </summary>
-        /// <param name="key">Ключ</param>
-        /// <returns>Число указанного ключа</returns>
+        /// <param name="key">Key</param>
+        /// <returns>The number specified key</returns>
         public int GetInteger(string key)
         {
             try
@@ -113,10 +115,10 @@ namespace craftersmine.Configuration
             { throw new IncorrectKeyValueTypeException("Ключ \"" + key + "\" не может быть преобразовать в тип Integer"); }
         }
         /// <summary>
-        /// Получает логическое значение указанного ключа
+        /// Gets a Boolean value of a specified key
         /// </summary>
-        /// <param name="key">Ключ</param>
-        /// <returns>true\false указанного ключа</returns>
+        /// <param name="key">Key</param>
+        /// <returns>true\false specified key</returns>
         public bool GetBoolean(string key)
         {
             if (GetString(key) == "true")
@@ -126,10 +128,10 @@ namespace craftersmine.Configuration
             else throw new IncorrectKeyValueTypeException("Ключ \"" + key + "\" не может быть преобразовать в тип Boolean");
         }
         /// <summary>
-        /// Задает значение <see cref="System.String"/> указанного ключа
+        /// Sets the <see cref="System.String"/> specified key
         /// </summary>
-        /// <param name="key">Ключ</param>
-        /// <param name="value">Задаваемое значение <see cref="System.String"/></param>
+        /// <param name="key">Ket</param>
+        /// <param name="value">Setting value <see cref="System.String"/></param>
         public void SetString(string key, string value)
         {
             if (_configContentsDict.ContainsKey(key))
@@ -143,19 +145,19 @@ namespace craftersmine.Configuration
             }
         }
         /// <summary>
-        /// Задает значение <see cref="System.Int32"/> указанного ключа
+        /// Sets the <see cref="System.Int32"/> specified key
         /// </summary>
-        /// <param name="key">Ключ</param>
-        /// <param name="value">Задаваемое значение <see cref="System.Int32"/></param>
+        /// <param name="key">Key</param>
+        /// <param name="value">Setting value <see cref="System.Int32"/></param>
         public void SetInteger(string key, int value)
         {
             SetString(key, value.ToString());
         }
         /// <summary>
-        /// Задает значение <see cref="System.Boolean"/> указанного ключа
+        /// Sets the <see cref="System.Boolean"/> specified key
         /// </summary>
-        /// <param name="key">Ключ</param>
-        /// <param name="value">Задаваемое значение <see cref="System.Boolean"/></param>
+        /// <param name="key">Key</param>
+        /// <param name="value">Setting value <see cref="System.Boolean"/></param>
         public void SetBoolean(string key, bool value)
         {
             if (value)
@@ -164,7 +166,7 @@ namespace craftersmine.Configuration
                 SetString(key, "false");
         }
         /// <summary>
-        /// Сохраняет конфигурацию в файл
+        /// Saves the configuration file
         /// </summary>
         public void SaveConfig()
         {
