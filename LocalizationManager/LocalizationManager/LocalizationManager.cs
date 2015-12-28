@@ -1,5 +1,7 @@
 ﻿//Copyright craftersmine (c) 2015
 
+//Documentation translated Google Translate
+
 using System.Collections.Generic;
 using System.IO;
 using craftersmine.Configuration;
