@@ -1,4 +1,8 @@
-﻿using System;
+﻿//Copyright craftersmine (c) 2015
+
+//Documentation translated Google Translate
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
