@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Управление общими сведениями о сборке осуществляется с помощью 
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("ApplicationCustomLogger")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Custom Logger Library")]
+[assembly: AssemblyDescription("Adds Custom Logging")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ApplicationCustomLogger")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCompany("craftersmine")]
+[assembly: AssemblyProduct("Custom Logger Library")]
+[assembly: AssemblyCopyright("Copyright © craftersmine 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
