@@ -6,9 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-using craftersmine.Configuration.Exceptions;
+using craftersmine.Config.Exceptions;
 
-namespace craftersmine.Configuration
+namespace craftersmine.Config
 {
     /// <summary>
     /// Implements class configuration management. This class can not be inherited
@@ -24,7 +24,7 @@ namespace craftersmine.Configuration
 
         #region Constructors
         /// <summary>
-        /// Initializes a new instance of the <see cref="craftersmine.Configuration.Configuration(string, bool)"/> and loads the specified file
+        /// Initializes a new instance of the <see cref="craftersmine.Config.Configuration(string, bool)"/> and loads the specified file
         /// </summary>
         /// <param name="file">Configuration File</param>
         /// <param name="validateConfig">Check the existence of the key "config"</param>
@@ -73,7 +73,7 @@ namespace craftersmine.Configuration
             }
         }
         /// <summary>
-        /// Initializes a new instance of the <see cref="craftersmine.Configuration.Configuration(string, bool)"/> with a check for the key "config", and loads the specified file
+        /// Initializes a new instance of the <see cref="craftersmine.Config.Configuration(string, bool)"/> with a check for the key "config", and loads the specified file
         /// </summary>
         /// <param name="file">Configuration File</param>
         public Configuration(string file)

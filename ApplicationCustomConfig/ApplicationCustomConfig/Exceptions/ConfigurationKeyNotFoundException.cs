@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace craftersmine.Configuration.Exceptions
+namespace craftersmine.Config.Exceptions
 {
     /// <summary>
     /// Throws if the specified key is not found
