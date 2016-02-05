@@ -14,7 +14,7 @@ namespace craftersmine.Logger
     /// <summary>
     /// Initializes a new instance of the logger. This class can not be inherited
     /// </summary>
-    public sealed class Logger
+    public sealed class Logging
     {
         private string _loadTime;
         private string _file;
@@ -55,12 +55,12 @@ namespace craftersmine.Logger
         /// </summary>
         /// <param name="directory">Directory for logs</param>
         /// <param name="name">Log name</param>
-        public Logger(string directory, string name)
+        public Logging(string directory, string name)
         {
             if (DateTime.Now.Hour.ToString().Length < 2)
                  _loadTime = DateTime.Now.ToShortDateString() + "_0" + DateTime.Now.ToShortTimeString();
             else _loadTime = DateTime.Now.ToShortDateString() + "_" + DateTime.Now.ToShortTimeString();
-            _file = Path.Combine(directory, name + "-" + _loadTime + ".log");
+            _file = directory + name + "_" + _loadTime.Replace(':', '-') + ".log";
             File.WriteAllText(_file, "");
         }
 
@@ -75,7 +75,8 @@ namespace craftersmine.Logger
             if (DateTime.Now.Hour.ToString().Length < 2)
                 _date = DateTime.Now.ToShortDateString() + " 0" + DateTime.Now.ToShortTimeString();
             else _date = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
-            File.AppendAllText(_file, _date + "[" + prefix + "]" + " " + contents);
+            File.AppendAllText(_file, _date + " [" + prefix + "]" + " " + contents + "\r\n");
+            Console.Write(_date + " [" + prefix + "]" + " " + contents + "\r\n");
         }
 
         /// <summary>
